@@ -15,6 +15,7 @@ public class UserController {
     @GetMapping("/greeting")
     @MyLimit(key = "limit")
     public String greeting() {
+        System.out.println("执行了greeting方法");
         return userService.greeting();
     }
 }
