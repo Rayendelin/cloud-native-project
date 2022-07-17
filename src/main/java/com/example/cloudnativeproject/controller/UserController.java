@@ -13,7 +13,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/greeting")
-    @MyLimit(key = "limit")
+    @MyLimit(key = "limit",permitPerSecond = 100, time=1)
     public String greeting() {
         System.out.println("执行了greeting方法");
         return userService.greeting();
